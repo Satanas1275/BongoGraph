@@ -1,0 +1,15 @@
+bongocat.jpg:
+  type: bopti-image
+  name: img_cat
+
+bongocat-r.jpg:
+  type: bopti-image
+  name: img_cat_r
+
+bongocat-l.jpg:
+  type: bopti-image
+  name: img_cat_l
+
+bongocat-lr.jpg:
+  type: bopti-image
+  name: img_cat_lr
