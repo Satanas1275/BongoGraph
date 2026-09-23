@@ -19,6 +19,12 @@ extern bopti_image_t img_cat_lr;
 static int count;
 #define SAVE_SIZE 4
 
+/* Position du compteur, en pixels (le texte ne bouge pas : X est le centre
+   du texte, le bord haut du texte est a Y). Par defaut : centre juste en
+   dessous de l'image. Ajuste ces valeurs pour deplacer le compteur. */
+#define COUNTER_X 50
+#define COUNTER_Y 50
+
 static int sw_save(int value)
 {
 	uint32_t v = (uint32_t)value;
@@ -76,7 +82,8 @@ static void draw_centered(bopti_image_t const *img)
 {
 	dclear(C_WHITE);
 	dimage((DWIDTH - img->width) / 2, (DHEIGHT - img->height) / 2, img);
-	dprint(2, 2, C_BLACK, "%d", count);
+	dprint_opt(COUNTER_X, COUNTER_Y, C_BLACK, C_NONE, DTEXT_CENTER, DTEXT_TOP,
+		"%d", count);
 	dupdate();
 }
 
